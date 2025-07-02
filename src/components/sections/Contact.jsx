@@ -45,7 +45,7 @@ const Desc = styled.div`
   }
 `;
 
-const ContactForm = styled.div`
+const ContactForm = styled.form`
   width: 95%;
   max-width: 600px;
   display: flex;
@@ -56,16 +56,17 @@ const ContactForm = styled.div`
   border-radius: 12px;
   box-shadow: rgba(23, 92, 230, 0.1) 0px 4px 24px;
   margin-top: 28px;
-  gap: 12px;
+  gap: 16px;
 `;
-const ContactTitle = styled.div`
+
+const ContactTitle = styled.h2`
   font-size: 28px;
-  margin-bottom: 6px;
   font-weight: 600;
   color: ${({ theme }) => theme.text_primary};
+  margin: 0 0 12px;
 `;
+
 const ContactInput = styled.input`
-  flex: 1;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.text_secondary + 50};
   outline: none;
@@ -73,26 +74,30 @@ const ContactInput = styled.input`
   color: ${({ theme }) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
-  }
-`;
-const ContactInputMessage = styled.textarea`
-  flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
-  outline: none;
-  font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
-  border-radius: 12px;
-  padding: 12px 16px;
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
-  }
-`;
-const ContactButton = styled.input`
   width: 100%;
-  text-decoration: none;
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.primary};
+  }
+`;
+
+const ContactInputMessage = styled.textarea`
+  background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
+  outline: none;
+  font-size: 18px;
+  color: ${({ theme }) => theme.text_primary};
+  border-radius: 12px;
+  padding: 12px 16px;
+  resize: vertical;
+  min-height: 120px;
+  width: 100%;
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.primary};
+  }
+`;
+
+const ContactButton = styled.button`
+  width: 100%;
   text-align: center;
   background: hsla(271, 100%, 50%, 1);
   padding: 13px 16px;
@@ -102,29 +107,64 @@ const ContactButton = styled.input`
   color: ${({ theme }) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: hsla(271, 100%, 60%, 1);
+  }
 `;
+
+
 
 const Contact = () => {
   const form = useRef();
-  const handelSubmit = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_tox7kqs",
-        "template_nv7k7mj",
-        form.current,
-        "SybVGsYS52j2TfLbi"
-      )
-      .then(
-        (result) => {
-          alert("Message Sent");
-          form.current.result();
-        },
-        (error) => {
-          alert(error);
-        }
-      );
-  };
+  // const handelSubmit = (e) => {
+  //   e.preventDefault();
+  //   emailjs
+  //     .sendForm(
+  //       "service_tox7kqs",
+  //       "template_nv7k7mj",
+  //       form.current,
+  //       "SybVGsYS52j2TfLbi"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         alert("Message Sent");
+  //         form.current.result();
+  //       },
+  //       (error) => {
+  //         alert(error);
+  //       }
+  //     );
+  // };
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form.current);
+  const email = formData.get("from_email");
+  const name = formData.get("from_name");
+  const subject = formData.get("subject");
+  const message = formData.get("message");
+
+  if (!email || !name || !subject || !message) {
+    alert("Please fill all the fields");
+    return;
+  }
+
+  const phoneNumber = "918149730996";
+
+  const whatsappMessage = `Hello, I got a new contact request:\n\nEmail: ${email}\nName: ${name}\nSubject: ${subject}\nMessage: ${message}`;
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  window.open(whatsappURL, "_blank");
+  // Form clear karne ke liye
+  form.current.reset();
+};
+
+
+
   return (
     <Container id="Education">
       <Wrapper>
@@ -134,15 +174,16 @@ const Contact = () => {
             marginBottom: "40px",
           }}
         >
-          Feel free to reach out to me for any questions or opportunities!
+          {/* Feel free to reach out to me for any questions or opportunities! */}
         </Desc>
-        <ContactForm onSubmit={handelSubmit}>
-          <ContactTitle>Email Me 🚀</ContactTitle>
+        <ContactForm ref={form} onSubmit={handleSubmit}>
+          <ContactTitle>Send Me 🚀</ContactTitle>
           <ContactInput placeholder="Your Email" name="from_email" />
           <ContactInput placeholder="Your Name" name="from_name" />
           <ContactInput placeholder="Subject" name="subject" />
           <ContactInputMessage placeholder="Message" name="message" rows={4} />
-          <ContactButton type="submit" value="Send" />
+          {/* <ContactButton type="submit" value="Send" /> */}
+          <ContactButton type="submit">Send</ContactButton>
         </ContactForm>
       </Wrapper>
     </Container>

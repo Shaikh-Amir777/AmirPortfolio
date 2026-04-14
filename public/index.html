@@ -2,29 +2,127 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    
+    <!-- Core SEO Meta Tags -->
+    <title>Amir Shaikh - Full Stack Developer | Portfolio</title>
+    <meta name="description" content="Amir Shaikh's professional portfolio showcasing full stack development projects, skills, and experience in web development, React, Node.js, and modern technologies." />
+    <meta name="keywords" content="Amir Shaikh, full stack developer, web developer, React developer, JavaScript, Node.js, portfolio, web development" />
+    <meta name="author" content="Amir Shaikh" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="google-site-verification" content="27E0McQ0jRXLzO63sSqMvH0MyfqFjfBUBlktaN6Y8KI" />
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:title" content="Amir Shaikh - Full Stack Developer | Portfolio" />
+    <meta property="og:description" content="Explore Amir Shaikh's professional portfolio with full stack development projects and expertise." />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.jpg" />
+    <meta property="og:site_name" content="Amir Shaikh Portfolio" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yourwebsite.com" />
+    <meta property="twitter:title" content="Amir Shaikh - Full Stack Developer | Portfolio" />
+    <meta property="twitter:description" content="Explore Amir Shaikh's professional portfolio with full stack development projects." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/logo512.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com" />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.jpg" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Amir Shaikh</title>
+    
+    <!-- Performance & Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    
+    <!-- JSON-LD Structured Data for Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Amir Shaikh",
+      "url": "https://yourwebsite.com",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://yourwebsite.com/logo512.jpg",
+          "width": 512,
+          "height": 512,
+          "caption": "Amir Shaikh - Full Stack Developer"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://yourwebsite.com/logo192.jpg",
+          "width": 192,
+          "height": 192,
+          "caption": "Amir Shaikh Profile Photo"
+        }
+      ],
+      "description": "Amir Shaikh is a Full Stack Developer specializing in React, Node.js, and modern web technologies. View his portfolio with projects and professional experience.",
+      "sameAs": [
+        "https://www.linkedin.com/in/amirshaikh",
+        "https://github.com/amirshaikh",
+        "https://twitter.com/amirshaikh"
+      ],
+      "jobTitle": "Full Stack Developer",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Your University"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Your Company"
+      }
+    }
+    </script>
+    
+    <!-- JSON-LD for Image Gallery -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Amir Shaikh Portfolio Images",
+      "associatedMedia": [
+        {
+          "@type": "ImageObject",
+          "url": "https://yourwebsite.com/logo512.jpg",
+          "name": "Amir Shaikh",
+          "description": "Professional photo of Amir Shaikh, Full Stack Developer",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://yourwebsite.com/acenna.jpg",
+          "name": "Amir Shaikh - Portfolio Photo",
+          "description": "Amir Shaikh portfolio image",
+          "width": 800,
+          "height": 600
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Additional Schema for Portfolio -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Amir Shaikh Portfolio",
+      "description": "Professional portfolio showcasing full stack development expertise",
+      "url": "https://yourwebsite.com",
+      "creativeWork": {
+        "@type": "SoftwareApplication",
+        "name": "Portfolio Website",
+        "description": "A modern, responsive portfolio built with React and Three.js"
+      }
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

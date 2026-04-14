@@ -106,7 +106,8 @@ const Footer = () => {
             <Instagram />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 Amir Shaikh. All rights reserved.</Copyright>
+         <Copyright>&copy; {new Date().getFullYear()} Amir Shaikh. All rights reserved.</Copyright>
+        {/* <Copyright>&copy; 2024 Amir Shaikh. All rights reserved.</Copyright> */}
       </FooterWrapper>
     </FooterContainer>
   );

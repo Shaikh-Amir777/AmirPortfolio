@@ -10,8 +10,11 @@ export const Bio = {
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/Shaikh-Amir777",
+  // Old resume link:
+  // resume:
+  //   "https://drive.google.com/file/d/1wWAc4-Is2c9ONLZ-GMqTuBtItczTMoFe/view?usp=sharing",
   resume:
-    "https://drive.google.com/file/d/1wWAc4-Is2c9ONLZ-GMqTuBtItczTMoFe/view?usp=sharing",
+    "/AmirCv (1).pdf",
   // linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
   // twitter: "https://twitter.com/RishavChanda",
   insta: "https://www.instagram.com/mohdamir2374/",
